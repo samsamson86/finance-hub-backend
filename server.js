@@ -121,7 +121,6 @@ app.get("/api/transactions", async (req, res) => {
 });
 
 app.get("/api/health", (_, res) => res.json({ status: "ok", connected: !!ACCESS_TOKEN }));
-
-const PORT = process.env.PORT || 8080;
 app.use(express.static(__dirname));
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Running on ${PORT}`));
