@@ -59,7 +59,8 @@ function openPlaid(){
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({public_token: public_token})
       }).then(r=>r.json()).then(d=>{
-        document.getElementById("status").textContent = "✅ Connected! Go back to your dashboard.";
+     document.getElementById("status").textContent = "✅ Connected! Returning…";
+setTimeout(()=>{ window.location.href = "/"; }, 1500);
         document.querySelector("button").textContent = "✅ Bank Connected!";
         document.querySelector("button").style.background = "#00d48a";
       });
